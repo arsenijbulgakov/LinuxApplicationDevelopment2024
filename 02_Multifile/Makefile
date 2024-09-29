@@ -2,25 +2,25 @@ GENERATES = prog prog-a prog-so README liboutput_static.a liboutput.so
 TRASH = *.o *~ o.* output_prog*
 CFLAGS = -Wall -fPIC
 
-all:	README prog prog-a prog-so
+all: README prog prog-a prog-so
 
-.SECONDARY:	liboutput_static.a(fun.o const.o)
+.SECONDARY: liboutput_static.a(fun.o const.o)
 
-%.o:	%.c
+%.o: %.c
 	cc $< $(CFLAGS) -c -o $@
 
-liboutput_static.a:	liboutput_static.a(fun.o const.o)
+liboutput_static.a: liboutput_static.a(fun.o const.o)
 
-liboutput.so:	fun.o const.o
+liboutput.so: fun.o const.o
 	cc -shared $^ -o $@
 
-prog:	const.o fun.o prog.o
+prog: const.o fun.o prog.o
 	cc $^ -o $@
 
-prog-a:	prog.o liboutput_static.a
-	cc	$<	-L.	-loutput_static	-o	$@
+prog-a: prog.o liboutput_static.a
+	cc $< -L. -loutput_static -o $@
 
-prog-so:	prog.o liboutput.so
+prog-so: prog.o liboutput.so
 	cc $< -L. -loutput -o $@
 
 README:	prog
