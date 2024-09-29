@@ -103,7 +103,7 @@ int main(int argc, char **argv)
     initscr();
     noecho();
     cbreak();
-    printw("Окно:");
+    printw("Файл: %s", fileName);
     refresh();
 
     frame = newwin(LINES - 2*DY, COLS - 2*DX, DY, DX);
