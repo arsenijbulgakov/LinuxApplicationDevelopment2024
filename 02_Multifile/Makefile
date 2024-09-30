@@ -37,9 +37,9 @@ test: prog prog-a prog-so
 	./prog-a first > output_prog-a_2 2>&1
 	LD_LIBRARY_PATH=`pwd` ./prog-so first > output_prog-so_2 2>&1
 
-	./prog first second > output_prog_3 2>&1
-	./prog-a first second > output_prog-a_3 2>&1
-	LD_LIBRARY_PATH=`pwd` ./prog-so first second > output_prog-so_3 2>&1
+	./prog first second third > output_prog_3 2>&1
+	./prog-a first second third > output_prog-a_3 2>&1
+	LD_LIBRARY_PATH=`pwd` ./prog-so first second third > output_prog-so_3 2>&1
 
 
 	cmp output_prog_1 output_prog-a_1
