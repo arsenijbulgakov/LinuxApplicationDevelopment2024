@@ -46,12 +46,18 @@ void move_file(const char *infile_name, const char *outfile_name) {
         fflush(outfile);
 
         if (ferror(outfile)) {
+            fclose(infile);
+            fclose(outfile);
+            remove(infile_name);
             fprintf(stderr, "%s: can't write to file\n", outfile_name);
             exit(WRITE_ERROR);
         }
     }
 
     if (ferror(infile)) {
+        fclose(infile);
+        fclose(outfile);
+        remove(infile_name);
         fprintf(stderr, "%s: can't read from file\n", infile_name);
         exit(READ_ERROR);
     }
