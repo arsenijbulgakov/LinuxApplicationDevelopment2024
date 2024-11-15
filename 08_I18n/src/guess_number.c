@@ -10,8 +10,8 @@
 int main(int argc, char **argv) {
 
     setlocale(LC_ALL, "");
-	bindtextdomain("guess_number", LOCALE_PATH);
-	textdomain("guess_number");
+    bindtextdomain("guess_number", LOCALE_PATH);
+    textdomain("guess_number");
 
     int left = 0;
     int right = 100;
