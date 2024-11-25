@@ -1,0 +1,22 @@
+--- random_maze.c	2024-11-25 19:45:49.411672554 +0000
++++ random_maze_1.c	2024-11-25 20:41:20.302471274 +0000
+@@ -5,7 +5,7 @@
+ #include <time.h>
+ 
+ 
+-#define N 13
++int N = 13;
+ 
+ void print_maze(char maze[N][N]) {
+     for (int i = 0; i < N; i++) {
+@@ -120,6 +120,10 @@
+ 
+     srand(time(NULL));
+ 
++    if (argc > 1) {
++        N = atoi(argv[1]) * 2 + 1;
++    }
++
+     char maze[N][N];
+     bool visited[N][N];
+ 

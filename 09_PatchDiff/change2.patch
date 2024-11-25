@@ -1,0 +1,79 @@
+--- random_maze.c	2024-11-25 19:45:49.411672554 +0000
++++ random_maze_2.c	2024-11-25 20:52:09.621627413 +0000
+@@ -5,7 +5,10 @@
+ #include <time.h>
+ 
+ 
+-#define N 13
++int N = 13;
++
++char room = '.';
++char wall = '#';
+ 
+ void print_maze(char maze[N][N]) {
+     for (int i = 0; i < N; i++) {
+@@ -21,11 +24,11 @@
+     for (int i = 0; i < N; i++) {
+         for (int j = 0; j < N; j++) {
+             if (i % 2 == 0) {
+-                maze[i][j] = '#';
++                maze[i][j] = wall;
+             } else if (j % 2 == 0) {
+-                maze[i][j] = '#';
++                maze[i][j] = wall;
+             } else {
+-                maze[i][j] = '.';
++                maze[i][j] = room;
+             }
+         }
+     }
+@@ -77,7 +80,7 @@
+     j_next = j + step_j;
+     if (check_range(i_next, j_next) && !visited[i_next][j_next]) {
+         visited[i_next][j_next] = true;
+-        maze[i + step_i / 2][j + step_j / 2] = '.';
++        maze[i + step_i / 2][j + step_j / 2] = room;
+         make_maze(i_next, j_next, maze, visited);
+     }
+ 
+@@ -88,7 +91,7 @@
+     j_next = j + step_j;
+     if (check_range(i_next, j_next) && !visited[i_next][j_next]) {
+         visited[i_next][j_next] = true;
+-        maze[i + step_i / 2][j + step_j / 2] = '.';
++        maze[i + step_i / 2][j + step_j / 2] = room;
+         make_maze(i_next, j_next, maze, visited);
+     }
+ 
+@@ -99,7 +102,7 @@
+     j_next = j + step_j;
+     if (check_range(i_next, j_next) && !visited[i_next][j_next]) {
+         visited[i_next][j_next] = true;
+-        maze[i + step_i / 2][j + step_j / 2] = '.';
++        maze[i + step_i / 2][j + step_j / 2] = room;
+         make_maze(i_next, j_next, maze, visited);
+     }
+ 
+@@ -110,7 +113,7 @@
+     j_next = j + step_j;
+     if (check_range(i_next, j_next) && !visited[i_next][j_next]) {
+         visited[i_next][j_next] = true;
+-        maze[i + step_i / 2][j + step_j / 2] = '.';
++        maze[i + step_i / 2][j + step_j / 2] = room;
+         make_maze(i_next, j_next, maze, visited);
+     }
+ }
+@@ -120,6 +123,13 @@
+ 
+     srand(time(NULL));
+ 
++    if (argc > 2) {
++        room = argv[1][0];
++        wall = argv[1][1];
++
++        N = atoi(argv[2]) * 2 + 1;
++    }
++
+     char maze[N][N];
+     bool visited[N][N];
+ 
