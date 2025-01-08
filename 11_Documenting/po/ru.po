@@ -1,0 +1,84 @@
+# Russian translations for 1.0 package
+# Английские переводы для пакета 1.0.
+# Copyright (C) 2024 THE 1.0'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 1.0 package.
+# root <root@b3f9372ff182>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-14 15:20+0000\n"
+"PO-Revision-Date: 2024-11-14 15:24+0000\n"
+"Last-Translator: root <root@b3f9372ff182>\n"
+"Language-Team: Russian <gnu@d07.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: guess_number.c:91
+#, c-format
+msgid "Usage: %s [OPTION]\n"
+msgstr "Использование: %s [АРГУМЕНТ]\n"
+
+#: guess_number.c:92
+#, c-format
+msgid "Options:\n"
+msgstr "Аргументы:\n"
+
+#: guess_number.c:93
+#, c-format
+msgid "    --help: Print help message\n"
+msgstr "    --help: Напечатать help сообщение\n"
+
+#: guess_number.c:94
+#, c-format
+msgid "    -r:     Use roman digit instead of arabic\n"
+msgstr "    -r:     Использовать римские цифры вместо арабских\n"
+
+#: guess_number.c:141
+#, c-format
+msgid "Choose a number from %s to %s\n"
+msgstr "Выберете число от %s до %s\n"
+
+#: guess_number.c:143
+#, c-format
+msgid "Choose a number from 1 to 100\n"
+msgstr "Выберете число от 1 до 100\n"
+
+#: guess_number.c:150
+#, c-format
+msgid "Is the number greater than %s?\n"
+msgstr "Ваше число больше чем %s?\n"
+
+#: guess_number.c:152
+#, c-format
+msgid "Is the number greater than %d?\n"
+msgstr "Ваше число больше чем %d?\n"
+
+#. printf("%s", ans);
+#: guess_number.c:156
+msgid "yes"
+msgstr "да"
+
+#: guess_number.c:158
+msgid "no"
+msgstr "нет"
+
+#: guess_number.c:161
+#, c-format
+msgid "The answer must be yes or no. Please enter your answer again\n"
+msgstr "Ответ должен быть да или нет. Введите ваш ответ еще раз\n"
+
+#: guess_number.c:166
+#, c-format
+msgid "Your numner is: %s\n"
+msgstr "Ваше число: %s\n"
+
+#: guess_number.c:168
+#, c-format
+msgid "Your numner is: %d\n"
+msgstr "Ваше число: %d\n"
